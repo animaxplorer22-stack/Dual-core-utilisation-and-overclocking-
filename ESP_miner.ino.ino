@@ -1,22 +1,4 @@
-/*
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║     DUCO-S1 OPTIMIZED MINER - ESP32 & ESP8266 Universal          ║
-  ║                  Maximizes share rate legitimately               ║
-  ╚══════════════════════════════════════════════════════════════════╝
-  
-  Features:
-  - Auto board detection (ESP32/ESP8266)
-  - CPU overclocking (240MHz ESP32, 160MHz ESP8266)
-  - Compiler optimizations (-Ofast)
-  - Dual-core mining on ESP32
-  - Stable watchdog management
-  - Connection health monitoring
-*/
 
-// ==================== COMPILER OPTIMIZATIONS ====================
-#pragma GCC optimize ("-Ofast")
-#pragma GCC optimize ("-funroll-loops")
-#pragma GCC optimize ("-ftree-vectorize")
 
 // ==================== USER CONFIGURATION ====================
 const char* ssid     = "YOUR_WIFI_SSID";
@@ -28,9 +10,7 @@ const char* rigName = "OptimizedMiner";
 // Mining settings
 const int baseDifficulty = 0;     // 0 = auto (recommended)
 const int maxNonceAttempts = 1000000;  // Safety limit
-// ============================================================
 
-// ==================== BOARD DETECTION ====================
 #ifdef ESP32
   #include <WiFi.h>
   #include <HTTPClient.h>
@@ -72,7 +52,6 @@ unsigned long lastShareTime = 0;
 unsigned long hashStartTime = 0;
 unsigned long hashesInCurrentSecond = 0;
 
-// ==================== HELPER FUNCTIONS ====================
 
 // Fast hex conversion (avoids String overhead)
 void bytesToHex(const uint8_t* data, size_t len, char* output) {
