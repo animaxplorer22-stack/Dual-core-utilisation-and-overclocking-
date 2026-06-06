@@ -1,4 +1,4 @@
-
+//IDK, lol, try out this code
 
 // ==================== USER CONFIGURATION ====================
 const char* ssid     = "YOUR_WIFI_SSID";
@@ -449,4 +449,4 @@ void loop() {
   }
   
   delay(5);  // Small delay to prevent watchdog issues
-}put this into a text box for me to easily copy
+}
